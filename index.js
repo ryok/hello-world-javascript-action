@@ -1,15 +1,18 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
 
 try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+    //// pushだとgithub.context.payloadで実行結果を取れるんだけど
+    //// gollumの場合は$GITHUB_EVENT_PATHの中身を持ってくる必要があった
+    const event = JSON.parse(core.getInput('event'));
+    if (event.pages) { // 最低限のチェックしかしていない
+        const pages = event.pages;
+        console.log(pages);
+        for (const page of pages) {
+            console.log(`${page.title}: ${page.html_url} (${page.action})`);
+            //// 出力例
+            // Home: https://github.com/wifeofvillon/github-wiki-mirror/wiki/Home (edited)
+        }
+    }
 } catch (error) {
-  core.setFailed(error.message);
+    core.setFailed(error.message);
 }
