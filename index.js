@@ -10,7 +10,7 @@ try {
         for (const page of pages) {
             console.log(`${page.title}: ${page.html_url} (${page.action})`);
             //// 出力例
-            // Home: https://github.com/wifeofvillon/github-wiki-mirror/wiki/Home (edited)
+            // Home: https://github.com/wifeofvillon/github-wiki-mirror/wiki/Home
         }
     }
 } catch (error) {
