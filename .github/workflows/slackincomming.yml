@@ -35,7 +35,7 @@ jobs:
                 "fields": [
                   {
                     "title": "event",
-                    "value": "${{ github.event }}"
+                    "value": "${{ github.event.pages }}"
                   },
                   {
                     "title": "Title",
