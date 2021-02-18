@@ -9,9 +9,9 @@ try {
         console.log(pages);
         for (const page of pages) {
             console.log(`${page.title}: ${page.html_url} (${page.action})`);
-            console.log(`${page.output}`);
             //// 出力例
-            // Home: https://github.com/wifeofvillon/github-wiki-mirror/wiki/Home
+            // Home: https://github.com/ryok/hello-world-javascript-action/wiki/Home (edited)
+            console.log(`${page.output}`);
         }
     }
 } catch (error) {
