@@ -39,7 +39,7 @@ jobs:
                   },
                   {
                     "title": "Title",
-                    "value": "${{ github.event.pages.title }}"
+                    "value": "${{ github.event.pages[0].title }}"
                   },
                   {
                     "title": "Wiki URL",
