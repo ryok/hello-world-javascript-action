@@ -43,11 +43,11 @@ jobs:
                   },
                   {
                     "title": "Wiki URL",
-                    "value": "${{ github.event.pages.html_url }}"
+                    "value": "${{ github.event.pages[0].html_url }}"
                   },
                   {
                     "title": "Action",
-                    "value": "${{ github.event.pages.action }}"
+                    "value": "${{ github.event.pages[0].action }}"
                   }
                 ]
               }
