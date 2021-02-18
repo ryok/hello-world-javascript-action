@@ -1,0 +1,6 @@
+- name: Slack Incoming Webhook
+  uses: tokorom/action-slack-incoming-webhook@v1.1.3
+  env:
+    INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  with:
+    text: Hello, Slack!
