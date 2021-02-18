@@ -8,18 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Dump github.event
-        # github.eventの中身を見たい
-        env:
-          EVENT: ${{ toJson(github.event) }}
-        run: echo "${EVENT}"
-      - name: Read info edited/created pages
-        # JavaScriptにgithub.eventの値を渡す
-        uses: ./
-        with:
-          event: ${{ toJson(github.event) }}
       - name: Slack Notification
         uses: tokorom/action-slack-incoming-webhook@main
         env:
