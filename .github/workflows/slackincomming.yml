@@ -34,6 +34,10 @@ jobs:
                 "author_icon": "${{ github.event.sender.avatar_url }}",
                 "fields": [
                   {
+                    "title": "event",
+                    "value": "${{ github.event }}"
+                  },
+                  {
                     "title": "Title",
                     "value": "${{ github.event.pages.title }}"
                   },
