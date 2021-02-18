@@ -13,7 +13,7 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: Successfully automated deployment.
+          text: Wiki was added or updated.
           attachments: |
             [
               {
@@ -21,10 +21,6 @@ jobs:
                 "author_name": "${{ github.actor }}",
                 "author_icon": "${{ github.event.sender.avatar_url }}",
                 "fields": [
-                  {
-                    "title": "event",
-                    "value": "${{ github.event.pages[0] }}"
-                  },
                   {
                     "title": "Title",
                     "value": "${{ github.event.pages[0].title }}"
