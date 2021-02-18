@@ -32,19 +32,18 @@ jobs:
                 "color": "good",
                 "author_name": "${{ github.actor }}",
                 "author_icon": "${{ github.event.sender.avatar_url }}",
-                "author_icon": "${{ github.pages }}",
                 "fields": [
                   {
-                    "title": "Commit Message",
-                    "value": "${{ env.COMMIT_MESSAGE }}"
+                    "title": "Title",
+                    "value": "${{ github.pages.title }}"
                   },
                   {
-                    "title": "GitHub Actions URL",
-                    "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
+                    "title": "Wiki URL",
+                    "value": "${{ github.pages.html_url }}"
                   },
                   {
-                    "title": "Compare URL",
-                    "value": "${{ github.event.compare }}"
+                    "title": "Action",
+                    "value": "${{ github.pages.action }}"
                   }
                 ]
               }
